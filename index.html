@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of the Rising Sun | 3-Star Accommodation KZN South Coast</title>
+    <meta name="description" content="3-Star accommodation on KwaZulu-Natal's South Coast. 800m from Park Rynie Beach. 16 ensuite rooms, sea views, DSTV, air-conditioned. Luxurious apartments & rooms.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --ocean-deep: #0a2540;
+            --ocean-mid: #1a5276;
+            --ocean-light: #2e86ab;
+            --sand-warm: #d4a574;
+            --sand-light: #f5e6d3;
+            --sand-cream: #faf6f1;
+            --sunset-gold: #c9a227;
+            --sunset-warm: #e8b86d;
+            --white: #ffffff;
+            --text-dark: #1a1a2e;
+            --text-muted: #6b7280;
+            --text-light: #9ca3af;
+            --success: #10b981;
+            --error: #ef4444;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--sand-cream); overflow-x: hidden; line-height: 1.6; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.2; }
+
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; transition: var(--transition); background: transparent; }
+        .navbar.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); box-shadow: var(--shadow-sm); padding: 0.75rem 2rem; }
+        .navbar.scrolled .nav-logo-text, .navbar.scrolled .nav-link { color: var(--text-dark); }
+        .navbar.scrolled .nav-logo-stars { filter: none; }
+        .nav-container { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .nav-logo-stars { display: flex; gap: 0.15rem; filter: brightness(0) invert(1); transition: var(--transition); }
+        .nav-logo-stars svg { width: 24px; height: 24px; }
+        .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--white); letter-spacing: 0.5px; transition: var(--transition); }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-link { color: var(--white); text-decoration: none; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: var(--transition); position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--sunset-gold); transition: var(--transition); }
+        .nav-link:hover::after { width: 100%; }
+        .nav-cta { background: var(--sunset-gold); color: var(--white); padding: 0.625rem 1.5rem; border-radius: 50px; font-weight: 600; text-decoration: none; transition: var(--transition); border: 2px solid var(--sunset-gold); }
+        .nav-cta:hover { background: transparent; color: var(--sunset-gold); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+
+        /* HERO */
+        .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-mid) 50%, var(--ocean-light) 100%); }
+        .hero-bg::before { content: ''; position: absolute; inset: 0; background: url('pool-seaview.png') center/cover; opacity: 0.5; animation: heroZoom 20s ease-in-out infinite alternate; }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,37,64,0.3) 0%, rgba(10,37,64,0.6) 60%, var(--ocean-deep) 100%); }
+        @keyframes heroZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        .hero-content { position: relative; z-index: 2; text-align: center; color: var(--white); max-width: 900px; padding: 0 2rem; animation: fadeInUp 1s ease-out; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-stars { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .hero-stars svg { width: 32px; height: 32px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+        .hero-label { font-size: 0.875rem; letter-spacing: 4px; text-transform: uppercase; opacity: 0.9; margin-bottom: 1rem; font-weight: 500; }
+        .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; margin-bottom: 1rem; letter-spacing: -1px; }
+        .hero-title em { font-style: italic; font-weight: 400; color: var(--sunset-warm); }
+        .hero-subtitle { font-size: clamp(1rem, 2vw, 1.25rem); opacity: 0.85; max-width: 600px; margin: 0 auto 2rem; font-weight: 300; line-height: 1.7; }
+        .hero-location { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.9rem; opacity: 0.8; margin-bottom: 2.5rem; }
+        .hero-location i { color: var(--sunset-gold); }
+
+        .booking-widget { background: rgba(255,255,255,0.15); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 1.5rem 2rem; display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; justify-content: center; max-width: 800px; margin: 0 auto; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+        .booking-field { flex: 1; min-width: 160px; text-align: left; }
+        .booking-field label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; opacity: 0.9; font-weight: 500; }
+        .booking-field input, .booking-field select { width: 100%; padding: 0.75rem 1rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; background: rgba(255,255,255,0.1); color: var(--white); font-size: 0.95rem; font-family: 'Inter', sans-serif; cursor: pointer; transition: var(--transition); }
+        .booking-field input:focus, .booking-field select:focus { outline: none; border-color: var(--sunset-gold); background: rgba(255,255,255,0.2); }
+        .booking-field input::placeholder { color: rgba(255,255,255,0.6); }
+        .booking-field select option { background: var(--ocean-deep); color: var(--white); }
+        .booking-btn { background: var(--sunset-gold); color: var(--white); border: none; padding: 0.875rem 2rem; border-radius: 12px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+        .booking-btn:hover { background: var(--sunset-warm); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201,162,39,0.4); }
+        .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+        .scroll-indicator i { color: var(--white); font-size: 1.5rem; opacity: 0.7; }
+
+        /* SECTIONS */
+        section { padding: 6rem 2rem; position: relative; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--sunset-gold); font-weight: 600; margin-bottom: 0.75rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3rem); color: var(--ocean-deep); margin-bottom: 1rem; }
+        .section-subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
+
+        /* ABOUT */
+        .about { background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-images { position: relative; }
+        .about-img-main { width: 100%; border-radius: 20px; box-shadow: var(--shadow-xl); object-fit: cover; height: 500px; }
+        .about-img-accent { position: absolute; bottom: -30px; right: -30px; width: 250px; height: 180px; border-radius: 16px; object-fit: cover; border: 4px solid var(--white); box-shadow: var(--shadow-lg); }
+        .about-content h3 { font-size: 2.25rem; color: var(--ocean-deep); margin-bottom: 1.5rem; }
+        .about-content p { color: var(--text-muted); margin-bottom: 1.25rem; font-size: 1.05rem; line-height: 1.8; }
+        .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+        .stat-item { text-align: center; }
+        .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; color: var(--ocean-mid); line-height: 1; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .amenities-list { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+        .amenity-tag { background: var(--sand-cream); color: var(--ocean-mid); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.4rem; }
+        .amenity-tag i { color: var(--sunset-gold); font-size: 0.8rem; }
+
+        /* GALLERY */
+        .gallery { background: var(--sand-cream); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .gallery-item { position: relative; border-radius: 16px; overflow: hidden; height: 280px; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--transition); }
+        .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-overlay { position: absolute; inset: 0; background: rgba(10,37,64,0.5); opacity: 0; transition: var(--transition); display: flex; align-items: center; justify-content: center; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay i { color: var(--white); font-size: 2rem; }
+        .gallery-item.featured { grid-column: span 2; grid-row: span 2; height: auto; }
+
+        /* ACCOMMODATION */
+        .accommodation { background: var(--white); }
+        .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .room-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition); cursor: pointer; border: 1px solid #f3f4f6; }
+        .room-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+        .room-image { position: relative; height: 280px; overflow: hidden; }
+        .room-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .room-card:hover .room-image img { transform: scale(1.1); }
+        .room-badge { position: absolute; top: 1rem; left: 1rem; background: var(--sunset-gold); color: var(--white); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .room-info { padding: 1.75rem; }
+        .room-name { font-size: 1.5rem; color: var(--ocean-deep); margin-bottom: 0.5rem; }
+        .room-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.6; }
+        .room-features { display: flex; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+        .room-feature { display: flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; color: var(--text-muted); }
+        .room-feature i { color: var(--ocean-light); }
+        .room-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #f3f4f6; }
+        .room-price { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 600; color: var(--ocean-deep); }
+        .room-price span { font-size: 0.85rem; color: var(--text-muted); font-weight: 400; font-family: 'Inter', sans-serif; }
+        .room-btn { background: var(--ocean-deep); color: var(--white); padding: 0.625rem 1.25rem; border-radius: 10px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: var(--transition); border: none; cursor: pointer; }
+        .room-btn:hover { background: var(--ocean-mid); }
+
+        /* FACILITIES */
+        .facilities { background: var(--sand-cream); }
+        .facilities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+        .facilities-column { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow-md); }
+        .facilities-column h3 { font-size: 1.5rem; color: var(--ocean-deep); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        .facilities-column h3 i { color: var(--sunset-gold); }
+        .facility-list { list-style: none; }
+        .facility-list li { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6; font-size: 0.95rem; color: var(--text-muted); }
+        .facility-list li:last-child { border-bottom: none; }
+        .facility-list li i { color: var(--ocean-light); width: 20px; text-align: center; }
+        .facility-list li i.fa-check { color: var(--success); }
+
+        /* EXPERIENCES */
+        .experiences { background: var(--white); }
+        .experiences-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .experience-card { position: relative; border-radius: 20px; overflow: hidden; height: 280px; cursor: pointer; box-shadow: var(--shadow-md); }
+        .experience-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .experience-card:hover img { transform: scale(1.1); }
+        .experience-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,37,64,0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; transition: var(--transition); }
+        .experience-card:hover .experience-overlay { background: linear-gradient(to top, rgba(10,37,64,0.95) 0%, rgba(10,37,64,0.3) 100%); }
+        .experience-name { color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .experience-desc { color: rgba(255,255,255,0.8); font-size: 0.85rem; line-height: 1.5; transform: translateY(20px); opacity: 0; transition: var(--transition); }
+        .experience-card:hover .experience-desc { transform: translateY(0); opacity: 1; }
+        .experience-distance { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.9); color: var(--ocean-deep); padding: 0.35rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+
+        /* RATES */
+        .rates { background: var(--sand-cream); }
+        .rates-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
+        .rates-table-container { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow-md); }
+        .rates-table { width: 100%; border-collapse: collapse; }
+        .rates-table th { text-align: left; padding: 1rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 2px solid #f3f4f6; font-weight: 600; }
+        .rates-table td { padding: 1.25rem 1rem; border-bottom: 1px solid #f3f4f6; font-size: 0.95rem; }
+        .rates-table tr:hover td { background: var(--sand-cream); }
+        .rate-room { font-weight: 600; color: var(--ocean-deep); }
+        .rate-price { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--ocean-mid); }
+        .rate-price span { font-size: 0.8rem; color: var(--text-muted); font-family: 'Inter', sans-serif; }
+        .rate-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; padding: 1rem; background: var(--sand-cream); border-radius: 10px; }
+        .hall-card { background: var(--ocean-deep); border-radius: 20px; padding: 2.5rem; color: var(--white); display: flex; flex-direction: column; justify-content: space-between; }
+        .hall-card h3 { font-size: 1.75rem; margin-bottom: 1rem; }
+        .hall-card p { opacity: 0.85; line-height: 1.7; margin-bottom: 1.5rem; }
+        .hall-price { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .hall-price span { font-size: 0.9rem; opacity: 0.7; font-family: 'Inter', sans-serif; }
+        .hall-btn { background: var(--sunset-gold); color: var(--white); padding: 0.875rem 1.5rem; border-radius: 12px; text-decoration: none; font-weight: 600; text-align: center; transition: var(--transition); margin-top: 1.5rem; }
+        .hall-btn:hover { background: var(--sunset-warm); }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--white); }
+        .testimonials-slider { max-width: 900px; margin: 0 auto; position: relative; }
+        .testimonial-card { text-align: center; padding: 2rem; }
+        .testimonial-stars { color: var(--sunset-gold); font-size: 1.25rem; margin-bottom: 1.5rem; }
+        .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: var(--ocean-deep); line-height: 1.6; margin-bottom: 2rem; }
+        .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+        .testimonial-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--sand-warm); background: var(--sand-cream); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--ocean-deep); font-size: 1.25rem; }
+        .testimonial-name { font-weight: 600; color: var(--text-dark); }
+        .testimonial-location { font-size: 0.85rem; color: var(--text-muted); }
+        .testimonial-nav { display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem; }
+        .testimonial-dot { width: 10px; height: 10px; border-radius: 50%; background: #d1d5db; cursor: pointer; transition: var(--transition); border: none; }
+        .testimonial-dot.active { background: var(--sunset-gold); width: 30px; border-radius: 5px; }
+
+        /* LOCATION */
+        .location { background: var(--sand-cream); }
+        .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .map-container { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); height: 100%; min-height: 400px; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+        .contact-card { background: var(--white); border-radius: 16px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; box-shadow: var(--shadow-sm); transition: var(--transition); }
+        .contact-card:hover { box-shadow: var(--shadow-md); transform: translateX(5px); }
+        .contact-icon { width: 48px; height: 48px; background: var(--sand-cream); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--ocean-mid); font-size: 1.25rem; flex-shrink: 0; }
+        .contact-details h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; color: var(--ocean-deep); margin-bottom: 0.25rem; }
+        .contact-details p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+        .contact-details a { color: var(--ocean-mid); text-decoration: none; transition: var(--transition); }
+        .contact-details a:hover { color: var(--sunset-gold); }
+        .contact-form { background: var(--white); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-md); margin-top: 1rem; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.875rem 1rem; border: 1px solid #e5e7eb; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: var(--transition); background: var(--sand-cream); }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--ocean-light); box-shadow: 0 0 0 3px rgba(46,134,171,0.1); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .submit-btn { background: var(--ocean-deep); color: var(--white); border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+        .submit-btn:hover { background: var(--ocean-mid); }
+
+        /* FOOTER */
+        .footer { background: var(--ocean-deep); color: var(--white); padding: 4rem 2rem 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        .footer-brand { max-width: 300px; }
+        .footer-brand .nav-logo-text { color: var(--white); margin-bottom: 1rem; display: inline-block; }
+        .footer-brand p { opacity: 0.7; line-height: 1.7; font-size: 0.9rem; }
+        .footer-social { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .footer-social a { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: var(--transition); }
+        .footer-social a:hover { background: var(--sunset-gold); transform: translateY(-3px); }
+        .footer-column h4 { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--sunset-gold); }
+        .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; opacity: 0.6; }
+
+        /* MODAL */
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem; }
+        .modal-overlay.active { display: flex; }
+        .modal { background: var(--white); border-radius: 24px; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-xl); animation: modalIn 0.3s ease; }
+        @keyframes modalIn { from { opacity: 0; transform: scale(0.95) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-header { padding: 2rem 2rem 0; display: flex; justify-content: space-between; align-items: center; }
+        .modal-header h2 { font-size: 1.75rem; color: var(--ocean-deep); }
+        .modal-close { background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+        .modal-close:hover { background: var(--sand-cream); color: var(--text-dark); }
+        .modal-body { padding: 1.5rem 2rem 2rem; }
+        .booking-summary { background: var(--sand-cream); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; }
+        .booking-summary-row { display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .booking-summary-row.total { font-weight: 700; font-size: 1.1rem; color: var(--ocean-deep); border-top: 2px solid var(--sand-warm); padding-top: 0.75rem; margin-top: 0.75rem; }
+        .modal-footer { padding: 0 2rem 2rem; }
+        .confirm-btn { background: var(--sunset-gold); color: var(--white); border: none; padding: 1rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; transition: var(--transition); }
+        .confirm-btn:hover { background: var(--sunset-warm); }
+
+        /* WHATSAPP */
+        .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.75rem; box-shadow: 0 4px 12px rgba(37,211,102,0.4); z-index: 999; text-decoration: none; transition: var(--transition); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { box-shadow: 0 4px 12px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 20px rgba(37,211,102,0.6); } }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* TOAST */
+        .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--ocean-deep); color: var(--white); padding: 1rem 2rem; border-radius: 12px; box-shadow: var(--shadow-xl); z-index: 3000; opacity: 0; transition: all 0.4s ease; font-weight: 500; display: flex; align-items: center; gap: 0.75rem; }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .toast.success { background: var(--success); }
+        .toast.error { background: var(--error); }
+
+        /* LIGHTBOX */
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 2rem; }
+        .lightbox.active { display: flex; }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 12px; object-fit: contain; }
+        .lightbox-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
+
+        /* MOBILE */
+        @media (max-width: 1024px) {
+            .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+            .experiences-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item.featured { grid-column: span 2; grid-row: span 1; }
+            .facilities-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { min-height: 600px; }
+            .booking-widget { flex-direction: column; align-items: stretch; }
+            .booking-field { min-width: 100%; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-img-accent { display: none; }
+            .rooms-grid { grid-template-columns: 1fr; }
+            .experiences-grid { grid-template-columns: 1fr; }
+            .rates-grid { grid-template-columns: 1fr; }
+            .location-grid { grid-template-columns: 1fr; }
+            .form-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .about-stats { grid-template-columns: 1fr; gap: 1rem; }
+            section { padding: 4rem 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-item.featured { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-stars">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a227"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a227"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a227"/></svg>
+                </div>
+                <div>
+                    <div class="nav-logo-text">House of the Rising Sun</div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#accommodation" class="nav-link">Rooms</a>
+                <a href="#facilities" class="nav-link">Facilities</a>
+                <a href="#rates" class="nav-link">Rates</a>
+                <a href="#location" class="nav-link">Contact</a>
+                <a href="#" class="nav-cta" onclick="openBookingModal(); return false;">Book Now</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-stars">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a227"/></svg>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a227"/></svg>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#c9a227"/></svg>
+            </div>
+            <div class="hero-label">3-Star Accommodation</div>
+            <h1 class="hero-title">Rise to a <em>Peaceful</em> Breakaway</h1>
+            <p class="hero-subtitle">Luxurious apartments and rooms on KwaZulu-Natal's stunning South Coast. 16 ensuite rooms with magnificent sea views, DSTV & air conditioning.</p>
+            <div class="hero-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Park Rynie, KwaZulu-Natal, South Africa</span>
+            </div>
+            <div class="booking-widget">
+                <div class="booking-field">
+                    <label>Check In</label>
+                    <input type="date" id="checkIn" min="">
+                </div>
+                <div class="booking-field">
+                    <label>Check Out</label>
+                    <input type="date" id="checkOut" min="">
+                </div>
+                <div class="booking-field">
+                    <label>Guests</label>
+                    <select id="guests">
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5+ Guests</option>
+                    </select>
+                </div>
+                <div class="booking-field">
+                    <label>Room Type</label>
+                    <select id="roomType">
+                        <option value="standard">Standard Room</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="family">Family Suite</option>
+                    </select>
+                </div>
+                <button class="booking-btn" onclick="checkAvailability()">
+                    <i class="fas fa-calendar-check"></i>
+                    Check Availability
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid reveal">
+                <div class="about-images">
+                    <img src="exterior-sign.png" alt="House of the Rising Sun exterior" class="about-img-main">
+                    <img src="pool-seaview.png" alt="Pool with sea view" class="about-img-accent">
+                </div>
+                <div class="about-content">
+                    <div class="section-label">Our Story</div>
+                    <h3>A Home Away From Home on the South Coast</h3>
+                    <p>House of the Rising Sun is situated approximately 60km South of Durban (just 45 minutes from Durban International Airport) on the beautiful South Coast of KwaZulu-Natal. Our property features luxurious 3 to 4 bedroom apartments plus individual rooms — all with ensuite bathrooms, magnificent sea views, DSTV, and air conditioning. With a total of 16 rooms, we cater to both holiday makers and business travellers.</p>
+                    <p>Only 800m from Park Rynie Beach and 5 minutes from Scottburgh Beach, we offer the perfect blend of comfort, peace, and tranquility. Whether you are here for a family holiday, a diving adventure at Aliwal Shoal, or a business trip, we provide the ideal base for your KZN coastal experience.</p>
+                    <div class="amenities-list">
+                        <span class="amenity-tag"><i class="fas fa-wifi"></i> Free WiFi</span>
+                        <span class="amenity-tag"><i class="fas fa-swimming-pool"></i> Swimming Pool</span>
+                        <span class="amenity-tag"><i class="fas fa-umbrella-beach"></i> Beach Access</span>
+                        <span class="amenity-tag"><i class="fas fa-parking"></i> Free Parking</span>
+                        <span class="amenity-tag"><i class="fas fa-snowflake"></i> Air Conditioning</span>
+                        <span class="amenity-tag"><i class="fas fa-tv"></i> DSTV</span>
+                        <span class="amenity-tag"><i class="fas fa-utensils"></i> Breakfast</span>
+                        <span class="amenity-tag"><i class="fas fa-shield-alt"></i> Secure</span>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">16</div>
+                            <div class="stat-label">Rooms</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">800m</div>
+                            <div class="stat-label">From Beach</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">45min</div>
+                            <div class="stat-label">From Airport</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery" id="gallery">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-label">Gallery</div>
+                <h2 class="section-title">Explore Our Property</h2>
+                <p class="section-subtitle">Take a look at our beautiful accommodation, pool area, and surroundings.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item featured reveal" onclick="openLightbox('exterior-gate.png')">
+                    <img src="exterior-gate.png" alt="Property entrance">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox('pool-seaview.png')">
+                    <img src="pool-seaview.png" alt="Swimming pool with sea view">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox('bedroom-balcony.png')">
+                    <img src="bedroom-balcony.png" alt="Deluxe bedroom with balcony">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox('bedroom-ensuite.png')">
+                    <img src="bedroom-ensuite.png" alt="Standard bedroom with ensuite">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox('exterior-sign.png')">
+                    <img src="exterior-sign.png" alt="Property exterior with sign">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item reveal" onclick="openLightbox('exterior-small.png')">
+                    <img src="exterior-small.png" alt="Property view">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCOMMODATION SECTION -->
+    <section class="accommodation" id="accommodation">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-label">Our Rooms</div>
+                <h2 class="section-title">Comfortable Accommodation</h2>
+                <p class="section-subtitle">Choose from our selection of well-appointed rooms and apartments, each designed for your comfort and relaxation.</p>
+            </div>
+            <div class="rooms-grid">
+                <div class="room-card reveal">
+                    <div class="room-image">
+                        <img src="bedroom-ensuite.png" alt="Standard Room">
+                        <span class="room-badge">Popular</span>
+                    </div>
+                    <div class="room-info">
+                        <h3 class="room-name">Standard Room</h3>
+                        <p class="room-desc">Comfortable room with ensuite bathroom, perfect for solo travellers or couples. Features DSTV, air conditioning, and all essential amenities.</p>
+                        <div class="room-features">
+                            <span class="room-feature"><i class="fas fa-bed"></i> Queen Bed</span>
+                            <span class="room-feature"><i class="fas fa-bath"></i> En-suite</span>
+                            <span class="room-feature"><i class="fas fa-user"></i> 2 Guests</span>
+                            <span class="room-feature"><i class="fas fa-tv"></i> DSTV</span>
+                            <span class="room-feature"><i class="fas fa-snowflake"></i> Air Con</span>
+                            <span class="room-feature"><i class="fas fa-wifi"></i> WiFi</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="room-price">R650 <span>/ night</span></div>
+                            <button class="room-btn" onclick="selectRoom('standard')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card reveal">
+                    <div class="room-image">
+                        <img src="bedroom-balcony.png" alt="Deluxe Room">
+                        <span class="room-badge">Best Value</span>
+                    </div>
+                    <div class="room-info">
+                        <h3 class="room-name">Deluxe Room</h3>
+                        <p class="room-desc">Spacious room with premium furnishings, balcony with magnificent sea views, and enhanced amenities including DSTV and air conditioning.</p>
+                        <div class="room-features">
+                            <span class="room-feature"><i class="fas fa-bed"></i> King Bed</span>
+                            <span class="room-feature"><i class="fas fa-bath"></i> En-suite</span>
+                            <span class="room-feature"><i class="fas fa-user"></i> 2 Guests</span>
+                            <span class="room-feature"><i class="fas fa-mountain"></i> Sea View</span>
+                            <span class="room-feature"><i class="fas fa-tv"></i> DSTV</span>
+                            <span class="room-feature"><i class="fas fa-snowflake"></i> Air Con</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="room-price">R850 <span>/ night</span></div>
+                            <button class="room-btn" onclick="selectRoom('deluxe')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card reveal">
+                    <div class="room-image">
+                        <img src="exterior-gate.png" alt="Family Apartment">
+                        <span class="room-badge">Family</span>
+                    </div>
+                    <div class="room-info">
+                        <h3 class="room-name">Family Apartment</h3>
+                        <p class="room-desc">Luxurious 3-4 bedroom apartment with fully fitted kitchen, perfect for families or groups. Includes dishwasher, microwave, washing machine & fridge/freezer.</p>
+                        <div class="room-features">
+                            <span class="room-feature"><i class="fas fa-bed"></i> 3-4 Bedrooms</span>
+                            <span class="room-feature"><i class="fas fa-bath"></i> Multiple Baths</span>
+                            <span class="room-feature"><i class="fas fa-users"></i> 6-8 Guests</span>
+                            <span class="room-feature"><i class="fas fa-utensils"></i> Full Kitchen</span>
+                            <span class="room-feature"><i class="fas fa-tv"></i> DSTV</span>
+                            <span class="room-feature"><i class="fas fa-snowflake"></i> Air Con</span>
+                        </div>
+                        <div class="room-footer">
+                            <div class="room-price">R1,800 <span>/ night</span></div>
+                            <button class="room-btn" onclick="selectRoom('family')">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACILITIES SECTION -->
+    <section class="facilities" id="facilities">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-label">Amenities</div>
+                <h2 class="section-title">Facilities & Amenities</h2>
+                <p class="section-subtitle">Everything you need for a comfortable stay, right here on-site and nearby.</p>
+            </div>
+            <div class="facilities-grid reveal">
+                <div class="facilities-column">
+                    <h3><i class="fas fa-home"></i> On-Site Amenities</h3>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Swimming Pool</li>
+                        <li><i class="fas fa-check"></i> Trampoline</li>
+                        <li><i class="fas fa-check"></i> TV & DSTV</li>
+                        <li><i class="fas fa-check"></i> Braai / BBQ Area</li>
+                        <li><i class="fas fa-check"></i> Free WiFi</li>
+                        <li><i class="fas fa-check"></i> Free Private Parking</li>
+                        <li><i class="fas fa-check"></i> 24-Hour Front Desk</li>
+                        <li><i class="fas fa-check"></i> Air Conditioning (All Rooms)</li>
+                        <li><i class="fas fa-check"></i> En-suite Bathrooms (All Rooms)</li>
+                        <li><i class="fas fa-check"></i> Magnificent Sea Views</li>
+                    </ul>
+                </div>
+                <div class="facilities-column">
+                    <h3><i class="fas fa-utensils"></i> Apartment Features</h3>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-check"></i> Fully Fitted Kitchen</li>
+                        <li><i class="fas fa-check"></i> Dishwasher</li>
+                        <li><i class="fas fa-check"></i> Microwave</li>
+                        <li><i class="fas fa-check"></i> Washing Machine</li>
+                        <li><i class="fas fa-check"></i> Fridge / Freezer</li>
+                    </ul>
+                    <h3 style="margin-top: 2rem;"><i class="fas fa-map-marker-alt"></i> Within 5km Radius</h3>
+                    <ul class="facility-list">
+                        <li><i class="fas fa-car"></i> Auto Rental</li>
+                        <li><i class="fas fa-umbrella-beach"></i> Beach</li>
+                        <li><i class="fas fa-ship"></i> Boating</li>
+                        <li><i class="fas fa-fish"></i> Fishing</li>
+                        <li><i class="fas fa-golf-ball"></i> Golf Course</li>
+                        <li><i class="fas fa-shopping-bag"></i> Shopping Mall</li>
+                        <li><i class="fas fa-hospital"></i> Medical Facilities</li>
+                        <li><i class="fas fa-utensils"></i> Restaurants</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCES SECTION -->
+    <section class="experiences" id="experiences">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-label">Discover</div>
+                <h2 class="section-title">Areas of Attraction</h2>
+                <p class="section-subtitle">Explore the best of KwaZulu-Natal's South Coast from our perfectly located accommodation.</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-card reveal">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&q=80" alt="Scuba Diving">
+                    <span class="experience-distance">50 min</span>
+                    <div class="experience-overlay">
+                        <h3 class="experience-name">Aliwal Shoal Diving</h3>
+                        <p class="experience-desc">World-renowned scuba diving with ragged-tooth sharks, rays, and vibrant coral reefs.</p>
+                    </div>
+                </div>
+                <div class="experience-card reveal">
+                    <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?w=500&q=80" alt="Shark Cage Diving">
+                    <span class="experience-distance">30 min</span>
+                    <div class="experience-overlay">
+                        <h3 class="experience-name">Shark Cage Diving</h3>
+                        <p class="experience-desc">Face Blacktip, Dusky, and Tiger sharks up close in Rocky Bay's thrilling cage dives.</p>
+                    </div>
+                </div>
+                <div class="experience-card reveal">
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=500&q=80" alt="Golf">
+                    <span class="experience-distance">10 min</span>
+                    <div class="experience-overlay">
+                        <h3 class="experience-name">Scottburgh Golf</h3>
+                        <p class="experience-desc">Beautiful undulating course with stunning Indian Ocean views on every hole.</p>
+                    </div>
+                </div>
+                <div class="experience-card reveal">
+                    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=500&q=80" alt="Crocworld">
+                    <span class="experience-distance">15 min</span>
+                    <div class="experience-overlay">
+                        <h3 class="experience-name">Crocworld Centre</h3>
+                        <p class="experience-desc">Get up close with crocodiles, snakes, and indigenous wildlife at this conservation center.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RATES SECTION -->
+    <section class="rates" id="rates">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-label">Pricing</div>
+                <h2 class="section-title">Our Rates</h2>
+                <p class="section-subtitle">Transparent pricing with no hidden fees. Special rates available for extended stays and groups.</p>
+            </div>
+            <div class="rates-grid reveal">
+                <div class="rates-table-container">
+                    <table class="rates-table">
+                        <thead>
+                            <tr>
+                                <th>Room Type</th>
+                                <th>Peak Season</th>
+                                <th>Standard</th>
+                                <th>Off-Peak</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rate-room">Standard Room</span><br><small>Queen bed, ensuite, DSTV, air con</small></td>
+                                <td><span class="rate-price">R750</span></td>
+                                <td><span class="rate-price">R650</span></td>
+                                <td><span class="rate-price">R550</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rate-room">Deluxe Room</span><br><small>King bed, balcony, sea view, DSTV, air con</small></td>
+                                <td><span class="rate-price">R950</span></td>
+                                <td><span class="rate-price">R850</span></td>
+                                <td><span class="rate-price">R750</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rate-room">Family Apartment</span><br><small>3-4 bedrooms, full kitchen, multiple baths</small></td>
+                                <td><span class="rate-price">R2,200</span></td>
+                                <td><span class="rate-price">R1,800</span></td>
+                                <td><span class="rate-price">R1,500</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="rate-note">
+                        <i class="fas fa-info-circle" style="color: var(--ocean-mid);"></i>
+                        <strong>Peak Season:</strong> December - January & Easter Weekend | <strong>Off-Peak:</strong> May - August. Rates are per room per night. Breakfast included. Children under 12 stay at 50% discount.
+                    </div>
+                </div>
+                <div class="hall-card">
+                    <div>
+                        <h3>Event Hall</h3>
+                        <p>Our versatile event space is perfect for conferences, weddings, celebrations, and corporate functions. Features a stunning Venice-themed mural stage, ambient lighting, and capacity for up to 120 guests.</p>
+                    </div>
+                    <div>
+                        <div class="hall-price">R3,500 <span>/ day</span></div>
+                        <p style="opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem;">Includes tables, chairs & basic setup</p>
+                        <a href="#location" class="hall-btn">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-label">Reviews</div>
+                <h2 class="section-title">What Our Guests Say</h2>
+            </div>
+            <div class="testimonials-slider reveal">
+                <div class="testimonial-card" id="testimonial-0">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Clean and well kept. The gentleman at the reception was very professional and very welcoming. Beautiful rooms, cleanliness and comfortable beds."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">D</div>
+                        <div>
+                            <div class="testimonial-name">Duke</div>
+                            <div class="testimonial-location">South Africa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" id="testimonial-1" style="display: none;">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Accommodation beautiful, clean. Everything perfect. The friendliness and the service was amazing. I loved that it was very private and very clean."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">N</div>
+                        <div>
+                            <div class="testimonial-name">Nokuthula</div>
+                            <div class="testimonial-location">South Africa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" id="testimonial-2" style="display: none;">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The view and it was clean. The view and how spacious it was. The quietness of the place. Pool side view breathtaking. Absolutely stunning!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div>
+                            <div class="testimonial-name">Cayla</div>
+                            <div class="testimonial-location">South Africa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" id="testimonial-3" style="display: none;">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The place is easily accessible, it is absolutely stunning, the room was nothing short of breathtaking. It was a tidy and pleasant space and the lady who assisted us was very nice."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">K</div>
+                        <div>
+                            <div class="testimonial-name">Kimoshnee</div>
+                            <div class="testimonial-location">South Africa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card" id="testimonial-4" style="display: none;">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"I stayed at this hotel over the past weekend with family. Great hotel, clean and spacious room. Close proximity to the beach. Very reasonable prices."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T</div>
+                        <div>
+                            <div class="testimonial-name">TripAdvisor Guest</div>
+                            <div class="testimonial-location">South Africa</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="testimonial-dot active" onclick="showTestimonial(0)"></button>
+                    <button class="testimonial-dot" onclick="showTestimonial(1)"></button>
+                    <button class="testimonial-dot" onclick="showTestimonial(2)"></button>
+                    <button class="testimonial-dot" onclick="showTestimonial(3)"></button>
+                    <button class="testimonial-dot" onclick="showTestimonial(4)"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT -->
+    <section class="location" id="location">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <div class="section-label">Find Us</div>
+                <h2 class="section-title">Location & Contact</h2>
+                <p class="section-subtitle">We are conveniently located on the South Coast with easy access to beaches, diving spots, and local attractions.</p>
+            </div>
+            <div class="location-grid reveal">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.1!2d30.7344!3d-30.2344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef63715cca812ef%3A0x325dd5b67eebf7e5!2sHouse%20of%20the%20Rising%20Sun!5e0!3m2!1sen!2sza!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-details">
+                            <h4>Physical Address</h4>
+                            <p>Lot 390, Sub 2, Old Main Road<br>Park Rynie, 4182<br>KwaZulu-Natal, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+27399782769">+27 39 978 2769</a><br><a href="tel:+27825518977">+27 82 551 8977</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:reeneshm@mweb.co.za">reeneshm@mweb.co.za</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-details">
+                            <h4>Check-in / Check-out</h4>
+                            <p>Check-in: 14:00 | Check-out: 10:00<br>24-hour front desk available</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--ocean-deep); margin-bottom: 1.5rem;">Send Us a Message</h3>
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="firstName" required placeholder="Your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lastName" required placeholder="Your last name">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" name="phone" placeholder="+27 ...">
+                                </div>
+                                <div class="form-group full">
+                                    <label>Subject</label>
+                                    <select name="subject">
+                                        <option value="booking">Room Booking Enquiry</option>
+                                        <option value="hall">Event Hall Enquiry</option>
+                                        <option value="general">General Enquiry</option>
+                                        <option value="feedback">Feedback</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full">
+                                    <label>Message</label>
+                                    <textarea name="message" required placeholder="How can we help you?"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="nav-logo-text">House of the Rising Sun</div>
+                <p>Your peaceful breakaway on KwaZulu-Natal's stunning South Coast. 16 ensuite rooms with sea views, DSTV & air conditioning. Ideal for holiday makers and business travellers.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#accommodation">Our Rooms</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#rates">Rates & Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Information</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Booking Policy</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+27399782769">+27 39 978 2769</a></li>
+                    <li><a href="tel:+27825518977">+27 82 551 8977</a></li>
+                    <li><a href="mailto:reeneshm@mweb.co.za">reeneshm@mweb.co.za</a></li>
+                    <li>Park Rynie, KZN</li>
+                    <li>3-Star Rated</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>House of the Rising Sun. All rights reserved.</span>
+            <span>Designed with care for the South Coast</span>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/27825518977" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- BOOKING MODAL -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Complete Your Booking</h2>
+                <button class="modal-close" onclick="closeBookingModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-summary">
+                    <div class="booking-summary-row">
+                        <span>Check In</span>
+                        <strong id="modalCheckIn">--</strong>
+                    </div>
+                    <div class="booking-summary-row">
+                        <span>Check Out</span>
+                        <strong id="modalCheckOut">--</strong>
+                    </div>
+                    <div class="booking-summary-row">
+                        <span>Room Type</span>
+                        <strong id="modalRoomType">--</strong>
+                    </div>
+                    <div class="booking-summary-row">
+                        <span>Guests</span>
+                        <strong id="modalGuests">--</strong>
+                    </div>
+                    <div class="booking-summary-row">
+                        <span>Nights</span>
+                        <strong id="modalNights">--</strong>
+                    </div>
+                    <div class="booking-summary-row total">
+                        <span>Total</span>
+                        <strong id="modalTotal">R0</strong>
+                    </div>
+                </div>
+                <p style="background: var(--sand-cream); padding: 1rem; border-radius: 10px; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    <i class="fas fa-info-circle" style="color: var(--ocean-mid);"></i>
+                    <strong>Booking by Email:</strong> Complete your details below and we will send your booking request via email. Our team will confirm availability and payment details within 24 hours.
+                </p>
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="bookingName" placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="bookingEmail" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" id="bookingPhone" placeholder="+27 ...">
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea id="bookingRequests" placeholder="Any special requirements?"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="confirm-btn" onclick="confirmBooking()">
+                    <i class="fas fa-envelope"></i>
+                    Send Booking Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <img src="" alt="Gallery image" id="lightboxImg">
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // NAVBAR SCROLL
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        // SET MIN DATES
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('checkIn').min = today;
+        document.getElementById('checkOut').min = today;
+
+        // SCROLL REVEAL
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // TESTIMONIAL SLIDER
+        let currentTestimonial = 0;
+        const totalTestimonials = 5;
+        function showTestimonial(index) {
+            document.querySelectorAll('.testimonial-card').forEach((card, i) => { card.style.display = i === index ? 'block' : 'none'; });
+            document.querySelectorAll('.testimonial-dot').forEach((dot, i) => { dot.classList.toggle('active', i === index); });
+            currentTestimonial = index;
+        }
+        setInterval(() => { currentTestimonial = (currentTestimonial + 1) % totalTestimonials; showTestimonial(currentTestimonial); }, 5000);
+
+        // LIGHTBOX
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // BOOKING SYSTEM
+        const roomPrices = {
+            standard: { name: 'Standard Room', peak: 750, standard: 650, offpeak: 550 },
+            deluxe: { name: 'Deluxe Room', peak: 950, standard: 850, offpeak: 750 },
+            family: { name: 'Family Apartment', peak: 2200, standard: 1800, offpeak: 1500 }
+        };
+        function getSeasonRate(date) {
+            const month = date.getMonth();
+            if (month === 11 || month === 0) return 'peak';
+            if (month >= 4 && month <= 7) return 'offpeak';
+            return 'standard';
+        }
+        function calculateNights(checkIn, checkOut) {
+            const start = new Date(checkIn);
+            const end = new Date(checkOut);
+            const diff = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+            return diff > 0 ? diff : 1;
+        }
+        function calculateTotal(roomType, checkIn, checkOut) {
+            const nights = calculateNights(checkIn, checkOut);
+            const start = new Date(checkIn);
+            const season = getSeasonRate(start);
+            const pricePerNight = roomPrices[roomType][season];
+            return pricePerNight * nights;
+        }
+        let selectedRoomType = 'standard';
+        let selectedCheckIn = '';
+        let selectedCheckOut = '';
+        let selectedGuests = 2;
+
+        function checkAvailability() {
+            const checkIn = document.getElementById('checkIn').value;
+            const checkOut = document.getElementById('checkOut').value;
+            const guests = document.getElementById('guests').value;
+            const roomType = document.getElementById('roomType').value;
+            if (!checkIn || !checkOut) { showToast('Please select check-in and check-out dates', 'error'); return; }
+            if (new Date(checkOut) <= new Date(checkIn)) { showToast('Check-out must be after check-in', 'error'); return; }
+            selectedRoomType = roomType;
+            selectedCheckIn = checkIn;
+            selectedCheckOut = checkOut;
+            selectedGuests = guests;
+            openBookingModal();
+        }
+        function selectRoom(roomType) {
+            document.getElementById('roomType').value = roomType;
+            selectedRoomType = roomType;
+            document.querySelector('.booking-widget').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            showToast(roomPrices[roomType].name + ' selected. Please choose your dates.', 'success');
+        }
+        function openBookingModal() {
+            const checkIn = selectedCheckIn || document.getElementById('checkIn').value || today;
+            const checkOut = selectedCheckOut || document.getElementById('checkOut').value || new Date(Date.now() + 86400000).toISOString().split('T')[0];
+            const guests = selectedGuests || document.getElementById('guests').value;
+            const roomType = selectedRoomType || document.getElementById('roomType').value;
+            const nights = calculateNights(checkIn, checkOut);
+            const total = calculateTotal(roomType, checkIn, checkOut);
+            document.getElementById('modalCheckIn').textContent = new Date(checkIn).toLocaleDateString('en-ZA', { day: 'numeric', month: 'short', year: 'numeric' });
+            document.getElementById('modalCheckOut').textContent = new Date(checkOut).toLocaleDateString('en-ZA', { day: 'numeric', month: 'short', year: 'numeric' });
+            document.getElementById('modalRoomType').textContent = roomPrices[roomType].name;
+            document.getElementById('modalGuests').textContent = guests + ' Guest' + (guests > 1 ? 's' : '');
+            document.getElementById('modalNights').textContent = nights + ' Night' + (nights > 1 ? 's' : '');
+            document.getElementById('modalTotal').textContent = 'R' + total.toLocaleString();
+            document.getElementById('bookingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // EMAIL BOOKING - Opens mailto with pre-filled details
+        function confirmBooking() {
+            const name = document.getElementById('bookingName').value;
+            const email = document.getElementById('bookingEmail').value;
+            const phone = document.getElementById('bookingPhone').value;
+            const requests = document.getElementById('bookingRequests').value;
+
+            if (!name || !email || !phone) { showToast('Please fill in all required fields', 'error'); return; }
+
+            const checkIn = document.getElementById('modalCheckIn').textContent;
+            const checkOut = document.getElementById('modalCheckOut').textContent;
+            const roomType = document.getElementById('modalRoomType').textContent;
+            const guests = document.getElementById('modalGuests').textContent;
+            const nights = document.getElementById('modalNights').textContent;
+            const total = document.getElementById('modalTotal').textContent;
+
+            const subject = encodeURIComponent('Booking Enquiry - ' + roomType + ' | ' + checkIn + ' to ' + checkOut);
+            const body = encodeURIComponent(
+                'Dear House of the Rising Sun Team,
+
+' +
+                'I would like to make a booking enquiry with the following details:
+
+' +
+                'NAME: ' + name + '
+' +
+                'EMAIL: ' + email + '
+' +
+                'PHONE: ' + phone + '
+
+' +
+                'BOOKING DETAILS:
+' +
+                'Room Type: ' + roomType + '
+' +
+                'Check In: ' + checkIn + '
+' +
+                'Check Out: ' + checkOut + '
+' +
+                'Guests: ' + guests + '
+' +
+                'Duration: ' + nights + '
+' +
+                'Estimated Total: ' + total + '
+
+' +
+                (requests ? 'SPECIAL REQUESTS:
+' + requests + '
+
+' : '') +
+                'Please confirm availability and provide payment details.
+
+' +
+                'Kind regards,
+' + name
+            );
+
+            window.location.href = 'mailto:reeneshm@mweb.co.za?subject=' + subject + '&body=' + body;
+
+            showToast('Booking request opened in your email client!', 'success');
+            closeBookingModal();
+            document.getElementById('bookingName').value = '';
+            document.getElementById('bookingEmail').value = '';
+            document.getElementById('bookingPhone').value = '';
+            document.getElementById('bookingRequests').value = '';
+        }
+
+        // CONTACT FORM - Email
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            const subjectMap = {
+                'booking': 'Room Booking Enquiry',
+                'hall': 'Event Hall Enquiry',
+                'general': 'General Enquiry',
+                'feedback': 'Feedback'
+            };
+
+            const mailSubject = encodeURIComponent(subjectMap[subject] || 'Website Enquiry');
+            const mailBody = encodeURIComponent(
+                'Dear House of the Rising Sun Team,
+
+' +
+                'You have received a new message from your website:
+
+' +
+                'NAME: ' + firstName + ' ' + lastName + '
+' +
+                'EMAIL: ' + email + '
+' +
+                'PHONE: ' + (phone || 'Not provided') + '
+' +
+                'SUBJECT: ' + (subjectMap[subject] || subject) + '
+
+' +
+                'MESSAGE:
+' + message + '
+
+' +
+                '---
+Sent from houseofrisingsun.co.za'
+            );
+
+            window.location.href = 'mailto:reeneshm@mweb.co.za?subject=' + mailSubject + '&body=' + mailBody;
+            showToast('Message opened in your email client!', 'success');
+            form.reset();
+        }
+
+        // TOAST
+        function showToast(message, type) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 4000);
+        }
+
+        // MOBILE MENU
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'rgba(255,255,255,0.98)';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '2rem';
+                navLinks.style.gap = '1.5rem';
+                navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+            }
+        }
+
+        // MODAL EVENTS
+        document.getElementById('bookingModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('bookingModal')) closeBookingModal();
+        });
+        document.addEventListener('keydown', (e) => { 
+            if (e.key === 'Escape') {
+                closeBookingModal();
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
