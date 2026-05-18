@@ -4,31 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>House of the Rising Sun | 3-Star Accommodation KZN South Coast</title>
-    <meta name="description" content="3-Star accommodation on KwaZulu-Natal's South Coast. 800m from Park Rynie Beach. 16 ensuite rooms, sea views, DSTV, air-conditioned. Luxurious apartments & rooms.">
+    <meta name="description" content="3-Star accommodation on KwaZulu-Natal's South Coast. 800m from Park Rynie Beach. 16 ensuite rooms with sea views, DSTV and air conditioning. Luxurious apartments and rooms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --ocean-deep: #0a2540;
-            --ocean-mid: #1a5276;
-            --ocean-light: #2e86ab;
-            --sand-warm: #d4a574;
-            --sand-light: #f5e6d3;
-            --sand-cream: #faf6f1;
-            --sunset-gold: #c9a227;
-            --sunset-warm: #e8b86d;
-            --white: #ffffff;
-            --text-dark: #1a1a2e;
-            --text-muted: #6b7280;
-            --text-light: #9ca3af;
-            --success: #10b981;
-            --error: #ef4444;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --ocean-deep: #0a2540; --ocean-mid: #1a5276; --ocean-light: #2e86ab;
+            --sand-warm: #d4a574; --sand-light: #f5e6d3; --sand-cream: #faf6f1;
+            --sunset-gold: #c9a227; --sunset-warm: #e8b86d; --white: #ffffff;
+            --text-dark: #1a1a2e; --text-muted: #6b7280; --text-light: #9ca3af;
+            --success: #10b981; --error: #ef4444;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05); --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1); --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -36,7 +25,6 @@
         body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--sand-cream); overflow-x: hidden; line-height: 1.6; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.2; }
 
-        /* NAVIGATION */
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; transition: var(--transition); background: transparent; }
         .navbar.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); box-shadow: var(--shadow-sm); padding: 0.75rem 2rem; }
         .navbar.scrolled .nav-logo-text, .navbar.scrolled .nav-link { color: var(--text-dark); }
@@ -54,10 +42,9 @@
         .nav-cta:hover { background: transparent; color: var(--sunset-gold); }
         .mobile-menu-btn { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
 
-        /* HERO */
         .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
         .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-mid) 50%, var(--ocean-light) 100%); }
-        .hero-bg::before { content: ''; position: absolute; inset: 0; background: url('pool-seaview.png') center/cover; opacity: 0.5; animation: heroZoom 20s ease-in-out infinite alternate; }
+        .hero-bg::before { content: ''; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80') center/cover; opacity: 0.5; animation: heroZoom 20s ease-in-out infinite alternate; }
         .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,37,64,0.3) 0%, rgba(10,37,64,0.6) 60%, var(--ocean-deep) 100%); }
         @keyframes heroZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
         .hero-content { position: relative; z-index: 2; text-align: center; color: var(--white); max-width: 900px; padding: 0 2rem; animation: fadeInUp 1s ease-out; }
@@ -84,7 +71,6 @@
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
         .scroll-indicator i { color: var(--white); font-size: 1.5rem; opacity: 0.7; }
 
-        /* SECTIONS */
         section { padding: 6rem 2rem; position: relative; }
         .section-container { max-width: 1200px; margin: 0 auto; }
         .section-header { text-align: center; margin-bottom: 4rem; }
@@ -92,7 +78,6 @@
         .section-title { font-size: clamp(2rem, 4vw, 3rem); color: var(--ocean-deep); margin-bottom: 1rem; }
         .section-subtitle { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
 
-        /* ABOUT */
         .about { background: var(--white); }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .about-images { position: relative; }
@@ -108,7 +93,6 @@
         .amenity-tag { background: var(--sand-cream); color: var(--ocean-mid); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 0.4rem; }
         .amenity-tag i { color: var(--sunset-gold); font-size: 0.8rem; }
 
-        /* GALLERY */
         .gallery { background: var(--sand-cream); }
         .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .gallery-item { position: relative; border-radius: 16px; overflow: hidden; height: 280px; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--transition); }
@@ -120,7 +104,6 @@
         .gallery-overlay i { color: var(--white); font-size: 2rem; }
         .gallery-item.featured { grid-column: span 2; grid-row: span 2; height: auto; }
 
-        /* ACCOMMODATION */
         .accommodation { background: var(--white); }
         .rooms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .room-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); transition: var(--transition); cursor: pointer; border: 1px solid #f3f4f6; }
@@ -141,7 +124,6 @@
         .room-btn { background: var(--ocean-deep); color: var(--white); padding: 0.625rem 1.25rem; border-radius: 10px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: var(--transition); border: none; cursor: pointer; }
         .room-btn:hover { background: var(--ocean-mid); }
 
-        /* FACILITIES */
         .facilities { background: var(--sand-cream); }
         .facilities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
         .facilities-column { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow-md); }
@@ -153,7 +135,6 @@
         .facility-list li i { color: var(--ocean-light); width: 20px; text-align: center; }
         .facility-list li i.fa-check { color: var(--success); }
 
-        /* EXPERIENCES */
         .experiences { background: var(--white); }
         .experiences-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
         .experience-card { position: relative; border-radius: 20px; overflow: hidden; height: 280px; cursor: pointer; box-shadow: var(--shadow-md); }
@@ -166,7 +147,6 @@
         .experience-card:hover .experience-desc { transform: translateY(0); opacity: 1; }
         .experience-distance { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.9); color: var(--ocean-deep); padding: 0.35rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
 
-        /* RATES */
         .rates { background: var(--sand-cream); }
         .rates-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
         .rates-table-container { background: var(--white); border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow-md); }
@@ -186,7 +166,6 @@
         .hall-btn { background: var(--sunset-gold); color: var(--white); padding: 0.875rem 1.5rem; border-radius: 12px; text-decoration: none; font-weight: 600; text-align: center; transition: var(--transition); margin-top: 1.5rem; }
         .hall-btn:hover { background: var(--sunset-warm); }
 
-        /* TESTIMONIALS */
         .testimonials { background: var(--white); }
         .testimonials-slider { max-width: 900px; margin: 0 auto; position: relative; }
         .testimonial-card { text-align: center; padding: 2rem; }
@@ -200,7 +179,6 @@
         .testimonial-dot { width: 10px; height: 10px; border-radius: 50%; background: #d1d5db; cursor: pointer; transition: var(--transition); border: none; }
         .testimonial-dot.active { background: var(--sunset-gold); width: 30px; border-radius: 5px; }
 
-        /* LOCATION */
         .location { background: var(--sand-cream); }
         .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
         .map-container { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); height: 100%; min-height: 400px; }
@@ -224,7 +202,6 @@
         .submit-btn { background: var(--ocean-deep); color: var(--white); border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
         .submit-btn:hover { background: var(--ocean-mid); }
 
-        /* FOOTER */
         .footer { background: var(--ocean-deep); color: var(--white); padding: 4rem 2rem 2rem; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; }
         .footer-brand { max-width: 300px; }
@@ -240,7 +217,6 @@
         .footer-links a:hover { color: var(--sunset-gold); }
         .footer-bottom { max-width: 1200px; margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; opacity: 0.6; }
 
-        /* MODAL */
         .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 2rem; }
         .modal-overlay.active { display: flex; }
         .modal { background: var(--white); border-radius: 24px; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-xl); animation: modalIn 0.3s ease; }
@@ -257,28 +233,23 @@
         .confirm-btn { background: var(--sunset-gold); color: var(--white); border: none; padding: 1rem; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; transition: var(--transition); }
         .confirm-btn:hover { background: var(--sunset-warm); }
 
-        /* WHATSAPP */
         .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.75rem; box-shadow: 0 4px 12px rgba(37,211,102,0.4); z-index: 999; text-decoration: none; transition: var(--transition); animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { box-shadow: 0 4px 12px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 20px rgba(37,211,102,0.6); } }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* ANIMATIONS */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* TOAST */
         .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--ocean-deep); color: var(--white); padding: 1rem 2rem; border-radius: 12px; box-shadow: var(--shadow-xl); z-index: 3000; opacity: 0; transition: all 0.4s ease; font-weight: 500; display: flex; align-items: center; gap: 0.75rem; }
         .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
         .toast.success { background: var(--success); }
         .toast.error { background: var(--error); }
 
-        /* LIGHTBOX */
         .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 2rem; }
         .lightbox.active { display: flex; }
         .lightbox img { max-width: 90%; max-height: 90%; border-radius: 12px; object-fit: contain; }
         .lightbox-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
 
-        /* MOBILE */
         @media (max-width: 1024px) {
             .rooms-grid { grid-template-columns: repeat(2, 1fr); }
             .experiences-grid { grid-template-columns: repeat(2, 1fr); }
@@ -286,6 +257,7 @@
             .gallery-grid { grid-template-columns: repeat(2, 1fr); }
             .gallery-item.featured { grid-column: span 2; grid-row: span 1; }
             .facilities-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -293,7 +265,6 @@
             .hero { min-height: 600px; }
             .booking-widget { flex-direction: column; align-items: stretch; }
             .booking-field { min-width: 100%; }
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
             .about-img-accent { display: none; }
             .rooms-grid { grid-template-columns: 1fr; }
             .experiences-grid { grid-template-columns: 1fr; }
@@ -310,8 +281,22 @@
     </style>
 </head>
 <body>
+    <div id="page-loader" style="position:fixed;inset:0;background:#0a2540;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;transition:opacity 0.5s;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:1rem;">House of the Rising Sun</div>
+        <div style="width:200px;height:3px;background:rgba(255,255,255,0.2);border-radius:3px;overflow:hidden;">
+            <div style="width:0%;height:100%;background:#c9a227;animation:loadBar 1.5s ease forwards;"></div>
+        </div>
+        <style>@keyframes loadBar{to{width:100%}}</style>
+    </div>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                var loader = document.getElementById('page-loader');
+                if(loader) { loader.style.opacity = '0'; setTimeout(function(){loader.remove();}, 500); }
+            }, 800);
+        });
+    </script>
 
-    <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
@@ -339,7 +324,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
@@ -350,7 +334,7 @@
             </div>
             <div class="hero-label">3-Star Accommodation</div>
             <h1 class="hero-title">Rise to a <em>Peaceful</em> Breakaway</h1>
-            <p class="hero-subtitle">Luxurious apartments and rooms on KwaZulu-Natal's stunning South Coast. 16 ensuite rooms with magnificent sea views, DSTV & air conditioning.</p>
+            <p class="hero-subtitle">Luxurious apartments and rooms on KwaZulu-Natal's stunning South Coast. 16 ensuite rooms with magnificent sea views, DSTV and air conditioning.</p>
             <div class="hero-location">
                 <i class="fas fa-map-marker-alt"></i>
                 <span>Park Rynie, KwaZulu-Natal, South Africa</span>
@@ -379,7 +363,7 @@
                     <select id="roomType">
                         <option value="standard">Standard Room</option>
                         <option value="deluxe">Deluxe Room</option>
-                        <option value="family">Family Suite</option>
+                        <option value="family">Family Apartment</option>
                     </select>
                 </div>
                 <button class="booking-btn" onclick="checkAvailability()">
@@ -393,13 +377,12 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section class="about" id="about">
         <div class="section-container">
             <div class="about-grid reveal">
                 <div class="about-images">
-                    <img src="exterior-sign.png" alt="House of the Rising Sun exterior" class="about-img-main">
-                    <img src="pool-seaview.png" alt="Pool with sea view" class="about-img-accent">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="House of the Rising Sun exterior" class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&q=80" alt="Pool with sea view" class="about-img-accent">
                 </div>
                 <div class="about-content">
                     <div class="section-label">Our Story</div>
@@ -435,7 +418,6 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
     <section class="gallery" id="gallery">
         <div class="section-container">
             <div class="section-header reveal">
@@ -444,35 +426,34 @@
                 <p class="section-subtitle">Take a look at our beautiful accommodation, pool area, and surroundings.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item featured reveal" onclick="openLightbox('exterior-gate.png')">
-                    <img src="exterior-gate.png" alt="Property entrance">
+                <div class="gallery-item featured reveal" onclick="openLightbox('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Property exterior">
                     <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
                 </div>
-                <div class="gallery-item reveal" onclick="openLightbox('pool-seaview.png')">
-                    <img src="pool-seaview.png" alt="Swimming pool with sea view">
+                <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Swimming pool with sea view">
                     <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
                 </div>
-                <div class="gallery-item reveal" onclick="openLightbox('bedroom-balcony.png')">
-                    <img src="bedroom-balcony.png" alt="Deluxe bedroom with balcony">
+                <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Deluxe bedroom with balcony">
                     <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
                 </div>
-                <div class="gallery-item reveal" onclick="openLightbox('bedroom-ensuite.png')">
-                    <img src="bedroom-ensuite.png" alt="Standard bedroom with ensuite">
+                <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80" alt="Standard bedroom with ensuite">
                     <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
                 </div>
-                <div class="gallery-item reveal" onclick="openLightbox('exterior-sign.png')">
-                    <img src="exterior-sign.png" alt="Property exterior with sign">
+                <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Property exterior with sign">
                     <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
                 </div>
-                <div class="gallery-item reveal" onclick="openLightbox('exterior-small.png')">
-                    <img src="exterior-small.png" alt="Property view">
+                <div class="gallery-item reveal" onclick="openLightbox('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=80" alt="Property view">
                     <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ACCOMMODATION SECTION -->
     <section class="accommodation" id="accommodation">
         <div class="section-container">
             <div class="section-header reveal">
@@ -483,7 +464,7 @@
             <div class="rooms-grid">
                 <div class="room-card reveal">
                     <div class="room-image">
-                        <img src="bedroom-ensuite.png" alt="Standard Room">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Standard Room">
                         <span class="room-badge">Popular</span>
                     </div>
                     <div class="room-info">
@@ -505,7 +486,7 @@
                 </div>
                 <div class="room-card reveal">
                     <div class="room-image">
-                        <img src="bedroom-balcony.png" alt="Deluxe Room">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80" alt="Deluxe Room">
                         <span class="room-badge">Best Value</span>
                     </div>
                     <div class="room-info">
@@ -527,12 +508,12 @@
                 </div>
                 <div class="room-card reveal">
                     <div class="room-image">
-                        <img src="exterior-gate.png" alt="Family Apartment">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Family Apartment">
                         <span class="room-badge">Family</span>
                     </div>
                     <div class="room-info">
                         <h3 class="room-name">Family Apartment</h3>
-                        <p class="room-desc">Luxurious 3-4 bedroom apartment with fully fitted kitchen, perfect for families or groups. Includes dishwasher, microwave, washing machine & fridge/freezer.</p>
+                        <p class="room-desc">Luxurious 3-4 bedroom apartment with fully fitted kitchen, perfect for families or groups. Includes dishwasher, microwave, washing machine and fridge/freezer.</p>
                         <div class="room-features">
                             <span class="room-feature"><i class="fas fa-bed"></i> 3-4 Bedrooms</span>
                             <span class="room-feature"><i class="fas fa-bath"></i> Multiple Baths</span>
@@ -551,7 +532,6 @@
         </div>
     </section>
 
-    <!-- FACILITIES SECTION -->
     <section class="facilities" id="facilities">
         <div class="section-container">
             <div class="section-header reveal">
@@ -600,7 +580,6 @@
         </div>
     </section>
 
-    <!-- EXPERIENCES SECTION -->
     <section class="experiences" id="experiences">
         <div class="section-container">
             <div class="section-header reveal">
@@ -645,7 +624,6 @@
         </div>
     </section>
 
-    <!-- RATES SECTION -->
     <section class="rates" id="rates">
         <div class="section-container">
             <div class="section-header reveal">
@@ -705,7 +683,6 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimonials">
         <div class="section-container">
             <div class="section-header reveal">
@@ -809,7 +786,6 @@
         </div>
     </section>
 
-    <!-- LOCATION & CONTACT -->
     <section class="location" id="location">
         <div class="section-container">
             <div class="section-header reveal">
@@ -895,12 +871,11 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="nav-logo-text">House of the Rising Sun</div>
-                <p>Your peaceful breakaway on KwaZulu-Natal's stunning South Coast. 16 ensuite rooms with sea views, DSTV & air conditioning. Ideal for holiday makers and business travellers.</p>
+                <p>Your peaceful breakaway on KwaZulu-Natal's stunning South Coast. 16 ensuite rooms with sea views, DSTV and air conditioning. Ideal for holiday makers and business travellers.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -944,12 +919,10 @@
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOAT -->
     <a href="https://wa.me/27825518977" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- BOOKING MODAL -->
     <div class="modal-overlay" id="bookingModal">
         <div class="modal">
             <div class="modal-header">
@@ -1015,36 +988,30 @@
         </div>
     </div>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
         <img src="" alt="Gallery image" id="lightboxImg">
     </div>
 
-    <!-- Toast -->
     <div class="toast" id="toast"></div>
 
     <script>
-        // NAVBAR SCROLL
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) navbar.classList.add('scrolled');
             else navbar.classList.remove('scrolled');
         });
 
-        // SET MIN DATES
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('checkIn').min = today;
         document.getElementById('checkOut').min = today;
 
-        // SCROLL REVEAL
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // TESTIMONIAL SLIDER
         let currentTestimonial = 0;
         const totalTestimonials = 5;
         function showTestimonial(index) {
@@ -1054,7 +1021,6 @@
         }
         setInterval(() => { currentTestimonial = (currentTestimonial + 1) % totalTestimonials; showTestimonial(currentTestimonial); }, 5000);
 
-        // LIGHTBOX
         function openLightbox(src) {
             document.getElementById('lightboxImg').src = src;
             document.getElementById('lightbox').classList.add('active');
@@ -1065,7 +1031,6 @@
             document.body.style.overflow = '';
         }
 
-        // BOOKING SYSTEM
         const roomPrices = {
             standard: { name: 'Standard Room', peak: 750, standard: 650, offpeak: 550 },
             deluxe: { name: 'Deluxe Room', peak: 950, standard: 850, offpeak: 750 },
@@ -1135,22 +1100,18 @@
             document.body.style.overflow = '';
         }
 
-        // EMAIL BOOKING - Opens mailto with pre-filled details
         function confirmBooking() {
             const name = document.getElementById('bookingName').value;
             const email = document.getElementById('bookingEmail').value;
             const phone = document.getElementById('bookingPhone').value;
             const requests = document.getElementById('bookingRequests').value;
-
             if (!name || !email || !phone) { showToast('Please fill in all required fields', 'error'); return; }
-
             const checkIn = document.getElementById('modalCheckIn').textContent;
             const checkOut = document.getElementById('modalCheckOut').textContent;
             const roomType = document.getElementById('modalRoomType').textContent;
             const guests = document.getElementById('modalGuests').textContent;
             const nights = document.getElementById('modalNights').textContent;
             const total = document.getElementById('modalTotal').textContent;
-
             const subject = encodeURIComponent('Booking Enquiry - ' + roomType + ' | ' + checkIn + ' to ' + checkOut);
             const body = encodeURIComponent(
                 'Dear House of the Rising Sun Team,
@@ -1191,9 +1152,7 @@
                 'Kind regards,
 ' + name
             );
-
             window.location.href = 'mailto:reeneshm@mweb.co.za?subject=' + subject + '&body=' + body;
-
             showToast('Booking request opened in your email client!', 'success');
             closeBookingModal();
             document.getElementById('bookingName').value = '';
@@ -1202,7 +1161,6 @@
             document.getElementById('bookingRequests').value = '';
         }
 
-        // CONTACT FORM - Email
         function handleContactSubmit(e) {
             e.preventDefault();
             const form = e.target;
@@ -1213,14 +1171,12 @@
             const phone = formData.get('phone');
             const subject = formData.get('subject');
             const message = formData.get('message');
-
             const subjectMap = {
                 'booking': 'Room Booking Enquiry',
                 'hall': 'Event Hall Enquiry',
                 'general': 'General Enquiry',
                 'feedback': 'Feedback'
             };
-
             const mailSubject = encodeURIComponent(subjectMap[subject] || 'Website Enquiry');
             const mailBody = encodeURIComponent(
                 'Dear House of the Rising Sun Team,
@@ -1245,13 +1201,11 @@
                 '---
 Sent from houseofrisingsun.co.za'
             );
-
             window.location.href = 'mailto:reeneshm@mweb.co.za?subject=' + mailSubject + '&body=' + mailBody;
             showToast('Message opened in your email client!', 'success');
             form.reset();
         }
 
-        // TOAST
         function showToast(message, type) {
             const toast = document.getElementById('toast');
             toast.textContent = message;
@@ -1260,7 +1214,6 @@ Sent from houseofrisingsun.co.za'
             setTimeout(() => { toast.classList.remove('show'); }, 4000);
         }
 
-        // MOBILE MENU
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
             if (navLinks.style.display === 'flex') {
@@ -1279,7 +1232,6 @@ Sent from houseofrisingsun.co.za'
             }
         }
 
-        // MODAL EVENTS
         document.getElementById('bookingModal').addEventListener('click', (e) => {
             if (e.target === document.getElementById('bookingModal')) closeBookingModal();
         });
