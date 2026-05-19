@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Close menu on link click
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -42,13 +41,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     const navbar = document.querySelector('.navbar');
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
 
     // ============================================
     // SMOOTH SCROLLING FOR ANCHOR LINKS
@@ -74,44 +75,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
-    window.addEventListener('scroll', function() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
+    if (sections.length && navLinks.length) {
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
         });
-    });
+    }
 
     // ============================================
     // SCROLL ANIMATIONS (FADE IN)
     // ============================================
     const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    if (fadeElements.length) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-    const fadeObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-    fadeElements.forEach(el => fadeObserver.observe(el));
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    }
 
     // ============================================
     // TESTIMONIALS CAROUSEL
@@ -150,7 +155,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (testimonialAuthor) testimonialAuthor.textContent = t.author;
         if (testimonialLocation) testimonialLocation.textContent = t.location;
         if (testimonialStars) {
-            testimonialStars.innerHTML = '★'.repeat(t.rating) + '☆'.repeat(5 - t.rating);
+            let starsHtml = '';
+            for (let i = 0; i < t.rating; i++) starsHtml += '&#9733;';
+            for (let i = t.rating; i < 5; i++) starsHtml += '&#9734;';
+            testimonialStars.innerHTML = starsHtml;
         }
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
@@ -165,27 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Auto-rotate testimonials
         setInterval(() => {
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             updateTestimonial(currentTestimonial);
         }, 6000);
-    }
-
-    // ============================================
-    // IMAGE CAROUSEL (STORY SECTION)
-    // ============================================
-    const storyImages = document.querySelectorAll('.story-images .img-main img, .story-images .img-overlay img');
-    let currentStoryImage = 0;
-
-    if (storyImages.length > 2) {
-        setInterval(() => {
-            // Simple image rotation effect if multiple images exist
-            storyImages.forEach((img, i) => {
-                img.style.opacity = i === currentStoryImage ? '1' : '0.3';
-            });
-            currentStoryImage = (currentStoryImage + 1) % storyImages.length;
-        }, 5000);
     }
 
     // ============================================
@@ -199,12 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const guests = bookingForm.querySelector('select[name="guests"]');
         const roomType = bookingForm.querySelector('select[name="roomtype"]');
 
-        // Set min date to today
         const today = new Date().toISOString().split('T')[0];
         if (checkIn) checkIn.min = today;
         if (checkOut) checkOut.min = today;
 
-        // Update checkout min when checkin changes
         if (checkIn && checkOut) {
             checkIn.addEventListener('change', function() {
                 checkOut.min = this.value;
@@ -231,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Simulate availability check
             alert('Checking availability...\n\n' +
                   'Check-in: ' + formData.checkIn + '\n' +
                   'Check-out: ' + formData.checkOut + '\n' +
@@ -260,7 +248,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert('Please enter a valid email address.');
@@ -312,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            const phone = '+27399782769'; // Replace with actual number
+            const phone = '+27399782769';
             const message = encodeURIComponent('Hi! I would like to enquire about accommodation at House of the Rising Sun.');
             window.open('https://wa.me/' + phone + '?text=' + message, '_blank');
         });
@@ -323,18 +310,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     const lazyImages = document.querySelectorAll('img[data-src]');
 
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
+    if (lazyImages.length) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    observer.unobserve(img);
+                }
+            });
         });
-    });
 
-    lazyImages.forEach(img => imageObserver.observe(img));
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
 
     // ============================================
     // PARALLAX EFFECT FOR HERO
@@ -353,53 +342,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // ============================================
     const statNumbers = document.querySelectorAll('.stat-number');
 
-    const counterObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.textContent);
-                let current = 0;
-                const increment = target / 50;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        el.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        el.textContent = Math.floor(current);
-                    }
-                }, 30);
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
+    if (statNumbers.length) {
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.textContent);
+                    let current = 0;
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            el.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
 
-    statNumbers.forEach(stat => counterObserver.observe(stat));
+        statNumbers.forEach(stat => counterObserver.observe(stat));
+    }
 
     // ============================================
-    // BACK TO TOP BUTTON (optional)
+    // BACK TO TOP BUTTON
     // ============================================
     const backToTop = document.createElement('button');
-    backToTop.innerHTML = '↑';
-    backToTop.style.cssText = `
-        position: fixed;
-        bottom: 90px;
-        right: 24px;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: var(--primary);
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 18px;
-        opacity: 0;
-        transition: all 0.3s ease;
-        z-index: 998;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
+    backToTop.innerHTML = '&uarr;';
+    backToTop.style.cssText = 'position:fixed;bottom:90px;right:24px;width:44px;height:44px;border-radius:50%;background:#1a2a3a;color:white;border:none;cursor:pointer;font-size:18px;opacity:0;transition:all 0.3s ease;z-index:998;display:flex;align-items:center;justify-content:center;';
     document.body.appendChild(backToTop);
 
     window.addEventListener('scroll', function() {
@@ -416,5 +389,5 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    console.log('✅ House of the Rising Sun - Scripts loaded successfully');
+    console.log('House of the Rising Sun - Scripts loaded successfully');
 });
